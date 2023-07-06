@@ -1,4 +1,5 @@
 import DatePickerForm from '@/components/forms/stepsform';
+import StepsGraph from '@/components/graphs/stepsgraph';
 import { Separator } from '@/components/ui/separator';
 
 export default function Page() {
@@ -7,8 +8,9 @@ export default function Page() {
       <h2 className='text-5xl font-bold'>Steps</h2>
       <div className='flex gap-10 mt-6'>
         <section className='w-4/6'>
-          <div className='border h-[600px]'>Super cool graph here</div>
-          <div className='border'>Graph options here</div>
+          <div className=''>
+            <StepsGraph />
+          </div>
         </section>
         <section className='w-2/6 space-y-14'>
           <div className='flex flex-col gap-4'>
