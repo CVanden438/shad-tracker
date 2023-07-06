@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Command } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
-import LoginForm from '@/components/loginform';
+import LoginForm from '@/components/forms/loginform';
 import { buttonVariants } from '@/components/ui/button';
 
 export const metadata: Metadata = {

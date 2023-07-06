@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
-import { Icons } from './icons';
+import { Icons } from '../icons';
 
 const formSchema = z.object({
   email: z.string().email(),
