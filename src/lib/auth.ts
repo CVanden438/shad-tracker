@@ -1,9 +1,9 @@
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import { NextAuthOptions } from 'next-auth';
-import EmailProvider from 'next-auth/providers/email';
+// import EmailProvider from 'next-auth/providers/email';
 import GitHubProvider from 'next-auth/providers/github';
 
-// import { env } from '@/env.mjs';
+import { env } from '@/lib/env.mjs';
 // import { siteConfig } from '@/config/site';
 import { db } from '@/lib/prisma';
 
@@ -20,8 +20,8 @@ export const authOptions: NextAuthOptions = {
   },
   providers: [
     GitHubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      clientId: env.GITHUB_CLIENT_ID,
+      clientSecret: env.GITHUB_CLIENT_SECRET,
     }),
     // EmailProvider({
     //   from: env.SMTP_FROM,
