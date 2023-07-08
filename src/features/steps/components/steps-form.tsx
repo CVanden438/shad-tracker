@@ -18,8 +18,12 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
-import { Input } from '../ui/input';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import { Input } from '@/components/ui/input';
 
 const FormSchema = z.object({
   date: z.date({
@@ -30,7 +34,7 @@ const FormSchema = z.object({
     .min(0, { message: 'Cannot have negative steps.' }),
 });
 
-export default function DatePickerForm() {
+export default function StepsForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: { date: new Date() },

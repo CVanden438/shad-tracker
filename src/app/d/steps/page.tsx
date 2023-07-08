@@ -1,6 +1,5 @@
-import DatePickerForm from '@/components/forms/stepsform';
-import StepsGraph from '@/components/graphs/stepsgraph';
-import { Separator } from '@/components/ui/separator';
+import StepsGraph from '@/features/steps/components/steps-graph';
+import StepsForm from '@/features/steps/components/steps-form';
 
 export default function Page() {
   return (
@@ -37,7 +36,7 @@ export default function Page() {
           </div>
           <div className='w-3/4'>
             <h4 className='font-bold text-2xl mb-6'>Enter Your Steps</h4>
-            <DatePickerForm />
+            <StepsForm />
           </div>
         </section>
       </div>
