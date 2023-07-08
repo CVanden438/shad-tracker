@@ -22,7 +22,7 @@ export default function Sidebar() {
           </li>
           <li>
             <Link
-              href='/d/steps'
+              href='/d/calories'
               className={cn(
                 buttonVariants({
                   variant: 'link',
@@ -30,33 +30,7 @@ export default function Sidebar() {
                 })
               )}
             >
-              Steps
-            </Link>
-          </li>
-          <li>
-            <Link
-              href='/d/steps'
-              className={cn(
-                buttonVariants({
-                  variant: 'link',
-                  className: 'block text-center',
-                })
-              )}
-            >
-              Steps
-            </Link>
-          </li>
-          <li>
-            <Link
-              href='/d/steps'
-              className={cn(
-                buttonVariants({
-                  variant: 'link',
-                  className: 'block text-center',
-                })
-              )}
-            >
-              Steps
+              Calories
             </Link>
           </li>
         </ul>
