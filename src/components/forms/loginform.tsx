@@ -17,6 +17,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { Icons } from '../icons';
+import { signIn } from 'next-auth/react';
 
 const formSchema = z.object({
   email: z.string().email(),
@@ -66,7 +67,12 @@ const LoginForm = () => {
           </span>
         </div>
       </div>
-      <Button variant='outline' type='button' disabled={isLoading}>
+      <Button
+        variant='outline'
+        type='button'
+        disabled={isLoading}
+        onClick={() => signIn('github')}
+      >
         {isLoading ? (
           <Icons.spinner className='mr-2 h-4 w-4 animate-spin' />
         ) : (

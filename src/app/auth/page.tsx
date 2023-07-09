@@ -6,13 +6,16 @@ import { Command } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import LoginForm from '@/components/forms/loginform';
 import { buttonVariants } from '@/components/ui/button';
+import { useSession } from 'next-auth/react';
+import { getServerSession } from 'next-auth';
+import { db } from '@/lib/prisma';
 
 export const metadata: Metadata = {
   title: 'Authentication',
   description: 'Authentication forms built using the components.',
 };
 
-export default function AuthenticationPage() {
+export default async function AuthenticationPage() {
   return (
     <>
       <div className='container relative h-[800px] flex-col items-center justify-center'>

@@ -2,7 +2,7 @@ import { PrismaAdapter } from '@auth/prisma-adapter';
 import { NextAuthOptions } from 'next-auth';
 // import EmailProvider from 'next-auth/providers/email';
 import GitHubProvider from 'next-auth/providers/github';
-
+import DiscordProvider from 'next-auth/providers/discord';
 import { env } from '@/lib/env.mjs';
 // import { siteConfig } from '@/config/site';
 import { db } from '@/lib/prisma';
@@ -23,6 +23,10 @@ export const authOptions: NextAuthOptions = {
       clientId: env.GITHUB_CLIENT_ID,
       clientSecret: env.GITHUB_CLIENT_SECRET,
     }),
+    // DiscordProvider({
+    //   clientId: 222,
+    //   clientSecret: 222,
+    // }),
     // EmailProvider({
     //   from: env.SMTP_FROM,
     //   sendVerificationRequest: async ({ identifier, url, provider }) => {
