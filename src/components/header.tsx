@@ -12,7 +12,7 @@ const Header = async () => {
   return (
     <header className='p-2 w-full flex items-center justify-between sticky border-b dark:border-slate-800 top-0'>
       <h1 className='font-bold text-xl'>
-        <Link href='/'>Tracker</Link>
+        <Link href='/'>Health Tracker</Link>
       </h1>
       <div className='flex gap-3 items-center'>
         <ModeToggle />
