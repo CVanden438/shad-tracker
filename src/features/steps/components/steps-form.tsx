@@ -94,7 +94,7 @@ export default function StepsForm() {
             <FormItem>
               <FormLabel>Count</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} type='number' />
               </FormControl>
               <FormMessage />
             </FormItem>
