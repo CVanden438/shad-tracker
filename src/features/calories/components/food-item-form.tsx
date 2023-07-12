@@ -21,18 +21,44 @@ import { Icons } from '@/components/icons';
 
 const formSchema = z.object({
   name: z.string().min(2, {
-    message: 'Username must be at least 2 characters.',
+    message: 'Meal name must be at least 2 characters.',
   }),
   item1: z.string(),
-  item2: z.string().optional(),
-  item3: z.string().optional(),
-  item4: z.string().optional(),
-  item5: z.string().optional(),
-  calories1: z.number(),
-  calories2: z.number().optional(),
-  calories3: z.number().optional(),
-  calories4: z.number().optional(),
-  calories5: z.number().optional(),
+  item2: z
+    .string()
+    .min(2, { message: 'Ingredient must be at least 2 characters' })
+    .optional(),
+  item3: z
+    .string()
+    .min(2, { message: 'Ingredient must be at least 2 characters' })
+    .optional(),
+  item4: z
+    .string()
+    .min(2, { message: 'Ingredient must be at least 2 characters' })
+    .optional(),
+  item5: z
+    .string()
+    .min(2, { message: 'Ingredient must be at least 2 characters' })
+    .optional(),
+  calories1: z.coerce
+    .number()
+    .min(0, { message: 'Must have a positive number of calories' }),
+  calories2: z.coerce
+    .number()
+    .min(0, { message: 'Must have a positive number of calories' })
+    .optional(),
+  calories3: z.coerce
+    .number()
+    .min(0, { message: 'Must have a positive number of calories' })
+    .optional(),
+  calories4: z.coerce
+    .number()
+    .min(0, { message: 'Must have a positive number of calories' })
+    .optional(),
+  calories5: z.coerce
+    .number()
+    .min(0, { message: 'Must have a positive number of calories' })
+    .optional(),
 });
 
 export function FoodItemForm() {

@@ -1,14 +1,18 @@
 import StepsGraph from '@/features/steps/components/steps-graph';
 import StepsForm from '@/features/steps/components/steps-form';
+import getSteps from '@/features/steps/actions/getSteps';
 
-export default function Page() {
+export default async function Page() {
+  const steps = await getSteps();
+  if (!steps) return;
+  console.log(steps);
   return (
     <div className='p-4 w-11/12'>
       <h2 className='text-5xl font-bold'>Steps</h2>
       <div className='flex gap-10 mt-6'>
         <section className='w-4/6'>
           <div className=''>
-            <StepsGraph />
+            <StepsGraph steps={steps} />
           </div>
         </section>
         <section className='w-2/6 space-y-14'>

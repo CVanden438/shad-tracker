@@ -11,6 +11,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import type { GetSteps } from '@/features/steps/actions/getSteps';
 
 ChartJS.register(
   CategoryScale,
@@ -47,6 +48,10 @@ export const data = {
   ],
 };
 
-export default function StepsGraph() {
+interface StepsGraphProps {
+  steps: { date: String; count: Number }[];
+}
+
+export default function StepsGraph({ steps }: StepsGraphProps) {
   return <Bar options={options} data={data} />;
 }

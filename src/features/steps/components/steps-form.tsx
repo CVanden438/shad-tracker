@@ -24,8 +24,9 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { Input } from '@/components/ui/input';
+import addSteps from '../actions/addSteps';
 
-const FormSchema = z.object({
+const StepsFormSchema = z.object({
   date: z.date({
     required_error: 'A date of birth is required.',
   }),
@@ -34,13 +35,19 @@ const FormSchema = z.object({
     .min(0, { message: 'Cannot have negative steps.' }),
 });
 
+export type StepsForm = z.infer<typeof StepsFormSchema>;
+
 export default function StepsForm() {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-    defaultValues: { date: new Date() },
+  const form = useForm<StepsForm>({
+    resolver: zodResolver(StepsFormSchema),
+    defaultValues: { date: new Date(), count: 0 },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {}
+  async function onSubmit(data: z.infer<typeof StepsFormSchema>) {
+    console.log(data);
+    await addSteps(data);
+    console.log('done');
+  }
 
   return (
     <Form {...form}>
