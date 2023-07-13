@@ -1,6 +1,6 @@
 'use server';
 import { db } from '@/lib/prisma';
-import { StepsForm } from '../components/steps-form';
+import { StepsForm } from '../components/stepsForm';
 import { getCurrentUser } from '@/lib/session';
 
 const addSteps = async (input: StepsForm) => {

@@ -1,5 +1,5 @@
-import StepsGraph from '@/features/steps/components/steps-graph';
-import StepsForm from '@/features/steps/components/steps-form';
+import StepsGraph from '@/features/steps/components/stepsGraph';
+import StepsForm from '@/features/steps/components/stepsForm';
 import getSteps from '@/features/steps/actions/getSteps';
 
 export default async function Page() {

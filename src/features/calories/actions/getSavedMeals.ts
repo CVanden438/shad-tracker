@@ -4,18 +4,19 @@ import { db } from '@/lib/prisma';
 import { getCurrentUser } from '@/lib/session';
 import { Prisma } from '@prisma/client';
 
-const getSteps = async () => {
+const getSavedMeals = async () => {
   const user = await getCurrentUser();
   if (!user) return;
-  const result = db.steps.findMany({
+  const result = await db.meal.findMany({
     where: { userId: user.id },
     select: {
-      count: true,
-      date: true,
+      name: true,
+      totalCals: true,
     },
   });
   return result;
 };
 
-export type GetSteps = Prisma.PromiseReturnType<typeof getSteps>;
-export default getSteps;
+export type GetSavedMeals = Prisma.PromiseReturnType<typeof getSavedMeals>;
+
+export default getSavedMeals;

@@ -7,10 +7,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import SavedFoodItem from './saved-food-item';
-import { FoodItemForm } from './food-item-form';
+import SavedFoodItem from './savedFoodItem';
+import { AddMealForm } from './addMealForm';
+import calcTotalCalories from '../utils/calcTotalCalories';
+import { GetSavedMeals } from '../actions/getSavedMeals';
+import addIntegers from '../utils/calcTotalCalories';
 
-const AddItemDialog = () => {
+const AddMealDialog = ({ meals }: { meals: GetSavedMeals }) => {
+  if (!meals) return;
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -26,16 +30,16 @@ const AddItemDialog = () => {
         <span>Saved Meals</span>
         <div className='border rounded-md p-2'>
           <ul>
-            <SavedFoodItem />
-            <SavedFoodItem />
-            <SavedFoodItem />
+            {meals.map((meal) => {
+              return <SavedFoodItem key={meal.name} meal={meal} />;
+            })}
           </ul>
         </div>
         <span>Add New Meal</span>
-        <FoodItemForm />
+        <AddMealForm />
       </DialogContent>
     </Dialog>
   );
 };
 
-export default AddItemDialog;
+export default AddMealDialog;

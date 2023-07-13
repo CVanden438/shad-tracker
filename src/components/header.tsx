@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from './theme-provider';
+import { ThemeProvider } from './themeProvider';
 import { ModeToggle } from './modetoggle';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';

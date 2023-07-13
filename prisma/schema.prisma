@@ -50,6 +50,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   steps         Steps[]
+  meals         Meal[]
 }
 
 model VerificationToken {
@@ -66,5 +67,25 @@ model Steps {
   user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   count       Int
   date        String  @unique
+  @@index([userId])
+}
+
+model Meal {
+  id          String @id @default(cuid())
+  userId      String
+  user        User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name        String
+  totalCals   Int
+  item1       String
+  item2       String?
+  item3       String?
+  item4       String?
+  item5       String?
+  calories1   Int
+  calories2   Int?
+  calories3   Int?
+  calories4   Int?
+  calories5   Int?
+
   @@index([userId])
 }

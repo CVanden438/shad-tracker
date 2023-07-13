@@ -7,10 +7,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import AddItemDialog from '@/features/calories/components/add-item-dialog';
-import FoodItem from '@/features/calories/components/food-item';
+import getSavedMeals from '@/features/calories/actions/getSavedMeals';
+import AddItemDialog from '@/features/calories/components/addMealDialog';
+import FoodItem from '@/features/calories/components/mealItem';
+import calcTotalCalories from '@/features/calories/utils/calcTotalCalories';
 
-export default function Page() {
+export default async function Page() {
+  const meals = await getSavedMeals();
+
   return (
     <div className='p-4 w-11/12'>
       <h2 className='text-5xl font-bold'>Calories</h2>
@@ -20,7 +24,7 @@ export default function Page() {
           <FoodItem />
           <FoodItem />
         </div>
-        <AddItemDialog />
+        <AddItemDialog meals={meals} />
       </div>
     </div>
   );

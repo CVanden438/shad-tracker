@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from '@/components/ui/dropdownMenu';
 import { getCurrentUser } from '@/lib/session';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { signOut, useSession } from 'next-auth/react';
@@ -57,15 +57,12 @@ export async function UserNav({ user }: any) {
           <DropdownMenuItem>New Team</DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <Button
-            variant='ghost'
-            className='w-full h-full p-0 py-1.5 cursor-pointer'
-            onClick={() => signOut()}
-          >
-            Log Out
-            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-          </Button>
+        <DropdownMenuItem
+          className='hover:cursor-pointer'
+          onClick={() => signOut()}
+        >
+          Log Out
+          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

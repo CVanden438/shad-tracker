@@ -18,28 +18,17 @@ import { Input } from '@/components/ui/input';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { Icons } from '@/components/icons';
+import addMeal from '../actions/addMeal';
 
-const formSchema = z.object({
+const addMealSchema = z.object({
   name: z.string().min(2, {
     message: 'Meal name must be at least 2 characters.',
   }),
   item1: z.string(),
-  item2: z
-    .string()
-    .min(2, { message: 'Ingredient must be at least 2 characters' })
-    .optional(),
-  item3: z
-    .string()
-    .min(2, { message: 'Ingredient must be at least 2 characters' })
-    .optional(),
-  item4: z
-    .string()
-    .min(2, { message: 'Ingredient must be at least 2 characters' })
-    .optional(),
-  item5: z
-    .string()
-    .min(2, { message: 'Ingredient must be at least 2 characters' })
-    .optional(),
+  item2: z.string().optional(),
+  item3: z.string().optional(),
+  item4: z.string().optional(),
+  item5: z.string().optional(),
   calories1: z.coerce
     .number()
     .min(0, { message: 'Must have a positive number of calories' }),
@@ -61,17 +50,31 @@ const formSchema = z.object({
     .optional(),
 });
 
-export function FoodItemForm() {
+export type AddMealSchema = z.infer<typeof addMealSchema>;
+
+export function AddMealForm() {
   const [items, setItems] = useState(1);
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof addMealSchema>>({
+    resolver: zodResolver(addMealSchema),
     defaultValues: {
       name: '',
+      item1: '',
+      item2: '',
+      item3: '',
+      item4: '',
+      item5: '',
+      calories1: 0,
+      calories2: 0,
+      calories3: 0,
+      calories4: 0,
+      calories5: 0,
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof addMealSchema>) {
+    console.log('jrejrej');
+    await addMeal(values);
+    return;
   }
   return (
     <Form {...form}>
