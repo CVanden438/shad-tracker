@@ -19,7 +19,7 @@ export default async function Page() {
   return (
     <div className='p-4 w-11/12'>
       <h2 className='text-5xl font-bold'>Calories</h2>
-      <div className='h-[500px] w-[400px] border rounded-md'>
+      <div className='h-[500px] w-[400px]  rounded-md'>
         <h3 className='font-bold text-3xl text-center mb-2'>Today</h3>
         <div className='mb-2'>
           {currentMeals?.map((meal) => (
