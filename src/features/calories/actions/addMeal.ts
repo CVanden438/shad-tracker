@@ -3,7 +3,8 @@
 import { getCurrentUser } from '@/lib/session';
 import { AddMealForm, AddMealSchema } from '../components/addMealForm';
 import { db } from '@/lib/prisma';
-import addIntegers from '../utils/calcTotalCalories';
+import addIntegers from '../utils/addDefinedIntegers';
+import addCurrentMeal from './addCurrentMeal';
 
 const addMeal = async (input: AddMealSchema) => {
   const {
@@ -47,6 +48,7 @@ const addMeal = async (input: AddMealSchema) => {
       calories5: calories5,
     },
   });
+  await addCurrentMeal(name);
   return result;
 };
 

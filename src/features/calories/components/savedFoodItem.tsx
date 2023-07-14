@@ -1,5 +1,7 @@
+'use client';
 import { Button } from '@/components/ui/button';
 import { GetSavedMeals } from '../actions/getSavedMeals';
+import addCurrentMeal from '../actions/addCurrentMeal';
 
 const SavedFoodItem = ({
   meal,
@@ -8,7 +10,11 @@ const SavedFoodItem = ({
 }) => {
   return (
     <li className=''>
-      <Button variant='ghost' className='flex justify-between w-full'>
+      <Button
+        variant='ghost'
+        className='flex justify-between w-full'
+        onClick={() => addCurrentMeal(meal.name)}
+      >
         <h4>{meal.name}</h4>
         <span>{meal.totalCals}</span>
       </Button>
