@@ -1,6 +1,7 @@
 import StepsGraph from '@/features/steps/components/stepsGraph';
 import StepsForm from '@/features/steps/components/stepsForm';
 import getSteps from '@/features/steps/actions/getSteps';
+import StepsGraph2 from '@/features/steps/components/stepsGraph2';
 
 export default async function Page() {
   const steps = await getSteps();
@@ -11,8 +12,8 @@ export default async function Page() {
       <h2 className='text-5xl font-bold'>Steps</h2>
       <div className='flex gap-10 mt-6'>
         <section className='w-4/6'>
-          <div className=''>
-            <StepsGraph steps={steps} />
+          <div className='grid place-content-center h-full'>
+            <StepsGraph2 steps={steps} />
           </div>
         </section>
         <section className='w-2/6 space-y-14'>
