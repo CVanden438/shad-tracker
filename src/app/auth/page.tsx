@@ -1,14 +1,6 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import { Command } from 'lucide-react';
-
-import { cn } from '@/lib/utils';
 import LoginForm from '@/components/forms/loginform';
-import { buttonVariants } from '@/components/ui/button';
-import { useSession } from 'next-auth/react';
-import { getServerSession } from 'next-auth';
-import { db } from '@/lib/prisma';
 
 export const metadata: Metadata = {
   title: 'Authentication',

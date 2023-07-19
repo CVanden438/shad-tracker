@@ -1,4 +1,3 @@
-import StepsGraph from '@/features/steps/components/stepsGraph';
 import StepsForm from '@/features/steps/components/stepsForm';
 import getSteps from '@/features/steps/actions/getSteps';
 import StepsGraph2 from '@/features/steps/components/stepsGraph2';

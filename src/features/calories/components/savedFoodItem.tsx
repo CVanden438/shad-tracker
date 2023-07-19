@@ -1,6 +1,5 @@
 'use client';
 import { Button } from '@/components/ui/button';
-import { GetSavedMeals } from '../actions/getSavedMeals';
 import addCurrentMeal from '../actions/addCurrentMeal';
 
 const SavedFoodItem = ({

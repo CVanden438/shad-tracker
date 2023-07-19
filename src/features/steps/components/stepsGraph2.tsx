@@ -10,7 +10,7 @@ import {
 } from 'recharts';
 
 interface StepsGraphProps {
-  steps: { date: String; count: Number }[];
+  steps: { date: string; count: number }[];
 }
 
 const StepsGraph2 = ({ steps }: StepsGraphProps) => {

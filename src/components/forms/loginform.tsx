@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useForm } from 'react-hook-form';
@@ -8,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -24,7 +22,7 @@ const formSchema = z.object({
 });
 
 const LoginForm = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading] = useState<boolean>(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

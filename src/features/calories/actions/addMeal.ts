@@ -1,7 +1,7 @@
 'use server';
 
 import { getCurrentUser } from '@/lib/session';
-import { AddMealForm, AddMealSchema } from '../components/addMealForm';
+import { AddMealSchema } from '../components/addMealForm';
 import { db } from '@/lib/prisma';
 import addIntegers from '../utils/addDefinedIntegers';
 import addCurrentMeal from './addCurrentMeal';

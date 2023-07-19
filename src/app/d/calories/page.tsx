@@ -1,17 +1,7 @@
-import { Button } from '@/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
 import getCurrentMeals from '@/features/calories/actions/getCurrentMeals';
 import getSavedMeals from '@/features/calories/actions/getSavedMeals';
 import AddMealDialog from '@/features/calories/components/addMealDialog';
 import MealItem from '@/features/calories/components/mealItem';
-import calcTotalCalories from '@/features/calories/utils/addDefinedIntegers';
 
 export default async function Page() {
   const meals = await getSavedMeals();

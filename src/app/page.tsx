@@ -1,8 +1,6 @@
 import { Button, buttonVariants } from '@/components/ui/button';
 import { getCurrentUser } from '@/lib/session';
 import { cn } from '@/lib/utils';
-import { getServerSession } from 'next-auth';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default async function Home() {

@@ -4,7 +4,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { GetCurrentMeals } from '../actions/getCurrentMeals';
 
 interface MealItemProps {
   data: {
@@ -26,8 +25,6 @@ interface MealItemProps {
 const MealItem = ({ data }: MealItemProps) => {
   if (!data) return;
   const {
-    name,
-    totalCals,
     item1,
     item2,
     item3,

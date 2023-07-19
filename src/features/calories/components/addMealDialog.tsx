@@ -9,9 +9,7 @@ import {
 } from '@/components/ui/dialog';
 import SavedFoodItem from './savedFoodItem';
 import { AddMealForm } from './addMealForm';
-import calcTotalCalories from '../utils/addDefinedIntegers';
 import { GetSavedMeals } from '../actions/getSavedMeals';
-import addIntegers from '../utils/addDefinedIntegers';
 
 const AddMealDialog = ({ meals }: { meals: GetSavedMeals }) => {
   if (!meals) return;

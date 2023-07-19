@@ -11,10 +11,8 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdownMenu';
-import { getCurrentUser } from '@/lib/session';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { signOut, useSession } from 'next-auth/react';
-import { User } from '@prisma/client';
+import { signOut } from 'next-auth/react';
 
 // interface Props {
 //   user: Omit<User, 'emailVerified'>;

@@ -11,7 +11,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import type { GetSteps } from '@/features/steps/actions/getSteps';
 
 ChartJS.register(
   CategoryScale,
@@ -49,19 +48,19 @@ export const data = {
 };
 
 interface StepsGraphProps {
-  steps: { date: String; count: Number }[];
+  steps: { date: string; count: number }[];
 }
 
-const getLabels = (steps: { date: String; count: Number }[]) => {
-  let labels: String[] = [];
+const getLabels = (steps: { date: string; count: number }[]) => {
+  const labels: string[] = [];
   for (const element of steps) {
     labels.push(element.date);
   }
   return labels;
 };
 
-const getData = (steps: { date: String; count: Number }[]) => {
-  let data: Number[] = [];
+const getData = (steps: { date: string; count: number }[]) => {
+  const data: number[] = [];
   for (const element of steps) {
     data.push(element.count);
   }
