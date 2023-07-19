@@ -13,18 +13,21 @@ import {
 } from '@/components/ui/dropdownMenu';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { signOut } from 'next-auth/react';
+import { Session } from 'next-auth';
+import Link from 'next/link';
 
 // interface Props {
 //   user: Omit<User, 'emailVerified'>;
 // }
 
-export async function UserNav({ user }: any) {
+export async function UserNav({ user }: Pick<Session, 'user'>) {
+  if (!user.image) return;
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
           <Avatar className='h-8 w-8'>
-            <AvatarImage src={user?.image!} alt='@shadcn' />
+            <AvatarImage src={user?.image} alt='@shadcn' />
             <AvatarFallback>SC</AvatarFallback>
           </Avatar>
         </Button>
@@ -40,9 +43,11 @@ export async function UserNav({ user }: any) {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            Profile
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+          <DropdownMenuItem asChild>
+            <Link href={'/profile'} className='cursor-pointer'>
+              Profile
+            </Link>
+            {/* <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut> */}
           </DropdownMenuItem>
           <DropdownMenuItem>
             Billing

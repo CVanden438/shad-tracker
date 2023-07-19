@@ -17,7 +17,7 @@
     "jsx-a11y/anchor-is-valid": "off",
     "no-unused-vars": "warn",
     "@typescript-eslint/no-empty-interface": "warn",
-
+    "@typescript-eslint/ban-ts-comment": "off",
     "import/extensions": 0,
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0
