@@ -7,7 +7,9 @@ const ProfilePage = async () => {
   return (
     <>
       <h2>Profile Page</h2>
-      <NameForm user={user} />
+      <div className='w-1/2 m-auto'>
+        <NameForm user={user} />
+      </div>
     </>
   );
 };
