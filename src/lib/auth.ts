@@ -2,7 +2,7 @@ import { PrismaAdapter } from '@auth/prisma-adapter';
 import { NextAuthOptions } from 'next-auth';
 // import EmailProvider from 'next-auth/providers/email';
 import GitHubProvider from 'next-auth/providers/github';
-import { env } from '@/lib/env.mjs';
+import { env } from '@/env.mjs';
 // import { siteConfig } from '@/config/site';
 import { db } from '@/lib/prisma';
 
