@@ -16,6 +16,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { User } from 'next-auth';
 import updateName from '../actions/updateName';
+import { useRouter } from 'next/navigation';
 
 const NameFormSchema = z.object({
   name: z.string({
@@ -26,6 +27,7 @@ const NameFormSchema = z.object({
 export type NameForm = z.infer<typeof NameFormSchema>;
 
 export default function NameForm({ user }: { user: User }) {
+  const router = useRouter();
   const form = useForm<NameForm>({
     resolver: zodResolver(NameFormSchema),
     defaultValues: { name: user.name ?? '' },
@@ -35,6 +37,7 @@ export default function NameForm({ user }: { user: User }) {
     console.log(data);
     await updateName(data.name);
     console.log('done');
+    router.refresh();
   }
 
   return (
