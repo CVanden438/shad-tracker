@@ -20,7 +20,6 @@ const addMeal = async (input: AddMealSchema) => {
     calories4,
     calories5,
   } = input;
-  console.log('gelloeoeo');
   const total = addIntegers([
     calories1,
     calories2,

@@ -7,7 +7,7 @@ const addSteps = async (input: StepsForm) => {
   const user = await getCurrentUser();
   if (!user) return;
   const trimmedDate = input.date.toString().substring(0, 10);
-  const result = db.steps.upsert({
+  const result = await db.steps.upsert({
     where: {
       date: trimmedDate,
     },
