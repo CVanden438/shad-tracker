@@ -1,9 +1,11 @@
 'use client';
+
 import {
   Bar,
   BarChart,
   CartesianGrid,
   Legend,
+  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
@@ -14,16 +16,17 @@ interface StepsGraphProps {
 }
 
 const StepsGraph2 = ({ steps }: StepsGraphProps) => {
-  console.log(steps);
   return (
-    <BarChart width={730} height={250} data={steps}>
-      <CartesianGrid strokeDasharray='3 3' />
-      <XAxis dataKey='date' />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Bar dataKey='count' fill='#8884d8' />
-    </BarChart>
+    <ResponsiveContainer height={400} width={600}>
+      <BarChart width={730} height={250} data={steps}>
+        <CartesianGrid strokeDasharray='3 3' />
+        <XAxis dataKey='date' />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey='count' fill='#8884d8' />
+      </BarChart>
+    </ResponsiveContainer>
   );
 };
 

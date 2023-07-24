@@ -14,7 +14,6 @@ const getSteps = async () => {
       date: true,
     },
   });
-  console.log(user.id);
   return result;
 };
 

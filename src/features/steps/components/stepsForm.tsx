@@ -24,6 +24,7 @@ import {
 } from '@/components/ui/popover';
 import { Input } from '@/components/ui/input';
 import addSteps from '../actions/addSteps';
+import { useRouter } from 'next/navigation';
 
 const StepsFormSchema = z.object({
   date: z.date({
@@ -37,6 +38,7 @@ const StepsFormSchema = z.object({
 export type StepsForm = z.infer<typeof StepsFormSchema>;
 
 export default function StepsForm() {
+  const router = useRouter();
   const form = useForm<StepsForm>({
     resolver: zodResolver(StepsFormSchema),
     defaultValues: { date: new Date(), count: 0 },
@@ -46,6 +48,7 @@ export default function StepsForm() {
     console.log(data);
     await addSteps(data);
     console.log('done');
+    router.refresh();
   }
 
   return (

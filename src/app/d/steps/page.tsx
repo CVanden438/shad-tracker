@@ -5,7 +5,6 @@ import StepsGraph2 from '@/features/steps/components/stepsGraph2';
 export default async function Page() {
   const steps = await getSteps();
   if (!steps) return;
-  console.log(steps);
   return (
     <div className='p-4 w-11/12'>
       <h2 className='text-5xl font-bold'>Steps</h2>
