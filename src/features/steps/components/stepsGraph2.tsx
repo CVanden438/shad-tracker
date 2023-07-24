@@ -5,6 +5,7 @@ import {
   BarChart,
   CartesianGrid,
   Legend,
+  ReferenceLine,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -24,6 +25,7 @@ const StepsGraph2 = ({ steps }: StepsGraphProps) => {
         <YAxis />
         <Tooltip />
         <Legend />
+        <ReferenceLine y={10} stroke='green' />
         <Bar dataKey='count' fill='#8884d8' />
       </BarChart>
     </ResponsiveContainer>
