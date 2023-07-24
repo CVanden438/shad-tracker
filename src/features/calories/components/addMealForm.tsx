@@ -17,6 +17,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { Icons } from '@/components/icons';
 import addMeal from '../actions/addMeal';
+import { useRouter } from 'next/navigation';
 
 const addMealSchema = z.object({
   name: z.string().min(2, {
@@ -51,6 +52,7 @@ const addMealSchema = z.object({
 export type AddMealSchema = z.infer<typeof addMealSchema>;
 
 export function AddMealForm() {
+  const router = useRouter();
   const [items, setItems] = useState(1);
   const form = useForm<z.infer<typeof addMealSchema>>({
     resolver: zodResolver(addMealSchema),
@@ -72,6 +74,7 @@ export function AddMealForm() {
   async function onSubmit(values: z.infer<typeof addMealSchema>) {
     console.log('jrejrej');
     await addMeal(values);
+    router.refresh();
     return;
   }
   return (
